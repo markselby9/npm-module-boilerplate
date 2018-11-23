@@ -1,7 +1,4 @@
-const defaultAwesomeFunction = (name) => {
-  const returnStr = `I am the Default Awesome Function, fellow comrade! - ${name}`;
-  return returnStr;
-};
+const defaultAwesomeFunction = name => `I am the Default Awesome Function, fellow comrade! - ${name}`;
 
 const awesomeFunction = () => 'I am just an Awesome Function';
 

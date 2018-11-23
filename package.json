@@ -1,10 +1,9 @@
 {
   "name": "npm-module-boilerplate",
   "version": "1.0.0",
-  "description": "Boilerplate for npm modules with ES6 features and syntax",
-  "main": "./lib/index.js",
+  "main": "./build/index.js",
   "scripts": {
-    "clean": "rimraf lib",
+    "clean": "rimraf build",
     "test": "npm run lint && npm run cover",
     "test:prod": "cross-env BABEL_ENV=production npm run test",
     "test:only": "mocha --require babel-core/register --require babel-polyfill --recursive",
@@ -12,30 +11,14 @@
     "test:examples": "node examples/",
     "cover": "istanbul cover _mocha -- --require babel-core/register --require babel-polyfill --recursive",
     "lint": "eslint src test",
-    "build": "cross-env BABEL_ENV=production babel src --out-dir lib",
+    "lint:fix": "eslint --fix src test",
+    "build": "cross-env BABEL_ENV=production babel src --out-dir build",
     "prepublish": "npm run clean && npm run lint && npm run test && npm run build"
   },
   "files": [
-    "lib",
+    "build",
     "src"
   ],
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/flexdinesh/npm-module-boilerplate.git"
-  },
-  "keywords": [
-    "boilerplate",
-    "npm",
-    "module",
-    "node",
-    "javascript"
-  ],
-  "author": "Dinesh Pandiyan <flexdinesh@gmail.com>",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/flexdinesh/npm-module-boilerplate/issues"
-  },
-  "homepage": "https://github.com/flexdinesh/npm-module-boilerplate#readme",
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-eslint": "^8.2.1",
